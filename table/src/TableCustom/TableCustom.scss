@@ -1,0 +1,77 @@
+  
+.wrapper {
+    position: relative;
+    margin: 10em auto 30em;
+    max-width: 600px;
+    overscroll-behavior: contain;
+
+    
+    &__header {
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 1;
+        .header__item{
+            width: 210px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            border: solid #fff;
+            border-width: 0 1px;
+            z-index: 1;
+            background: #efefef;
+            font-weight: 700;
+        }
+      }
+    &__tracks,
+    &__scroller {
+        overflow: auto;
+        display: flex;
+
+        &::-webkit-scrollbar{
+            width: 2rem;
+            height: 5px;
+            background-color: #9fc0d8;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: rgba(5, 36, 36, 0.337);
+            border-radius:10px;
+        }
+    }
+    &__tracks{
+        display: flex;
+        flex-direction: column;
+        .tracks__item{
+            flex: 1 0 calc(22% + 2px);
+            scroll-snap-align: start;
+            display: flex;
+            .entry{
+                width: 210px;
+                flex-shrink: 0;
+                border: 1px solid #ebebeb;
+                border-top: 0;
+                background: #fff;
+                height: 8em;
+                padding: 1em;
+                display: flex;
+                align-items: center;
+                h3{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+
+    .tracks__item + .tracks__items {
+        margin-left: -1px;
+      }
+}
+  
+  
